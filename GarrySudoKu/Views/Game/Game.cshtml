@@ -1,0 +1,26 @@
+﻿@model GarrySudoKu.Models.GameBoard
+@{ ViewData["Title"] = "Sudoku";}
+<h2>@ViewData["Title"]</h2>
+
+<body>
+
+    <table border="1" align="center" cellpadding="10">
+        @for(var r = 1; r <= Constants.BoardSize; r++)
+        {
+        <tr>
+            @for (var c = 1; c <= Constants.BoardSize; c++)
+            {
+                var cell = Model.Board[r - 1][c - 1];
+                @if (cell is null)
+                {
+                    <td align="center" valign="middle" height="80" width="80">@Html.DropDownListFor(m => m.Temp, Model.SelectList, "n?", new { })</td>
+                }
+                else
+                {
+                    <td align="center" valign="middle" height="80" width="80">@cell.Value</td>
+                }
+            }
+        </tr>
+        }
+    </table>
+</body>

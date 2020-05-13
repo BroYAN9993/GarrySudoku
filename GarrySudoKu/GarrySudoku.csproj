@@ -6,4 +6,7 @@
 
 
 
+  <ItemGroup>
+    <Folder Include="Views\Game\" />
+  </ItemGroup>
 </Project>

@@ -1,6 +1,9 @@
 ﻿namespace GarrySudoKu.Models
 {
-    public class GameStatus
+    public enum GameStatus
     {
+        Normal,
+        Success,
+        Failed
     }
 }
